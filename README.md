@@ -1,3 +1,4 @@
 # Notepad
 
-Come back later
+Not ready yet
+Please come back later
