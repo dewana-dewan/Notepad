@@ -283,7 +283,35 @@
 		transition: all .2s;
 	}
 
+	.grid {
+  background: #DDD;
+  max-width: 1200px;
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+	.grid-item {
+	  float: left;
+	  width: 100px;
+	  height: 100px;
+	  background: #C09;
+	  border: 2px solid hsla(0, 0%, 0%, 0.5);
+	}
+
+	.grid-item--width2 { width: 200px; }
+	.grid-item--height2 { height: 200px; }
+
+
 </style>
+<script type="text/javascript" src="packery/packery.pkgd.js">
+	$('.grid').packery({
+  itemSelector: '.grid-item'
+});
+</script>
 </head>
 <body>
 <center>
@@ -291,14 +319,21 @@
 	<hr width="50%">
 	</center>
 
-	<div id="feed">
-		<br>	
-		<div class="col-2-1" id="feed1"></div>
-		<div class="col-2-2" id="feed2"></div>
-		<div class="col-2-3" id="feed3"></div>
-		<div class="col-2-4" id="feed4"></div>
-		<div class="col-4" id="feed5"></div>
 
+	<div class="grid">
+	  <div class="grid-item grid-item--width2"></div>
+	  <div class="grid-item grid-item--height2"></div>
+	  <div class="grid-item"></div>
+	  <div class="grid-item"></div>
+	  <div class="grid-item grid-item--width2 grid-item--height2"></div>
+	  <div class="grid-item grid-item--width2"></div>
+	  <div class="grid-item grid-item--width2"></div>
+	  <div class="grid-item grid-item--height2"></div>
+	  <div class="grid-item"></div>
+	  <div class="grid-item grid-item--width2"></div>
+	  <div class="grid-item grid-item--height2"></div>
+	  <div class="grid-item"></div>
+	  <div class="grid-item"></div>
 	</div>
 
 	<div id="thetable" >
