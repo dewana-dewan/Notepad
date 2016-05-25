@@ -7,10 +7,11 @@
 	
 	#heading{
 		font-weight: lighter;
-		font-size: 700%;
+		font-size: 300%;
 		color:rgba(250,0,0,.6);
-		margin-top: 2%;
+		margin-top: 1%;
 		margin-bottom: 1%;
+		padding-left: 20px; 
 		font-family:sans-seri;
 	}
 	#feed{
@@ -113,13 +114,13 @@
 	}
 	#end-note{
 		position: fixed;
-		width:30%;
+		width:80%;
 		bottom:0px;
 		font-family: sans-serif;
 		font-size: 100%;
 		margin: 1%;
 		padding:.3%;
-		left:35%;
+		left:10%;
 		text-align: center;
 		color:rgba(250,0,0,.6);
 		font-weight: lighter;
@@ -284,7 +285,9 @@
 	}
 
 	.grid {
-  background: #DDD;
+		left: 5%;
+		width: 90%;
+  background: white;
   max-width: 1200px;
 }
 
@@ -296,31 +299,81 @@
 
 	.grid-item {
 	  float: left;
-	  width: 100px;
-	  height: 100px;
+	  width: 150px;
+	  height: 150px;
 	  background: #C09;
 	  border: 2px solid hsla(0, 0%, 0%, 0.5);
 	}
 
-	.grid-item--width2 { width: 200px; }
+	.grid-item--width2 { width: 300px; }
 	.grid-item--height2 { height: 200px; }
+
+#foot{
+	background-color: white;
+	position: fixed;
+	top: 88%;
+	bottom: 0%;
+	right: 0px;
+	left:0px;
+
+	box-shadow: 0px -20px 10px white;
+
+}
 
 
 </style>
 <script type="text/javascript" src="packery/packery.pkgd.js">
-	$('.grid').packery({
-  itemSelector: '.grid-item'
+// 	var elem = document.querySelector('.grid');
+// var pckry = new Packery( elem, {
+//   // options
+//   itemSelector: '.grid-item',
+//   gutter: 10
+// });
+
+// // element argument can be a selector string
+// //   for an individual element
+// var pckry = new Packery( '.grid', {
+//   // options
+// });
+</script> 
+<!-- <script type="text/javascript" src="packer/draggabilly.pkgd.min.js"></script>
+<script>
+//draggabilly initialisation
+var elem = document.querySelector('.draggable');
+var draggie = new Draggabilly( elem, {
+  // options...
 });
-</script>
+
+// or pass in selector string as first argument
+var draggie = new Draggabilly( '.draggable', {
+  // options...
+});
+
+// if you have multiple .draggable elements
+// get all draggie elements
+var draggableElems = document.querySelectorAll('.draggable');
+// array of Draggabillies
+var draggies = []
+// init Draggabillies
+for ( var i=0, len = draggableElems.length; i < len; i++ ) {
+  var draggableElem = draggableElems[i];
+  var draggie = new Draggabilly( draggableElem, {
+    // options...
+  });
+  draggies.push( draggie );
+}
+
+</script> -->
 </head>
 <body>
-<center>
+
+
 	<h1 id="heading" >NOTEPAD</h1>
-	<hr width="50%">
-	</center>
+	<hr width="98%">
+	
 
 
-	<div class="grid">
+	<div class="grid" data-packery='{ "itemSelector": ".grid-item", "gutter": 10 }'>
 	  <div class="grid-item grid-item--width2"></div>
 	  <div class="grid-item grid-item--height2"></div>
 	  <div class="grid-item"></div>
@@ -346,45 +399,48 @@
 	
 	<center>
 
-	<fieldset id="text-add" style="position: relative; width:84%; ">
-	<legend>TEXT</legend>
-	<input id="text-note-head" placeholder="Heading"><br><br>
-	<textarea id="text-note" placeholder="Text"></textarea><br>
-	<!--select>
-			<option>ADD Priority option</option>
-			<option>asdfdfa</option>
-	</select-->
-	</fieldset>
+		<fieldset id="text-add" style="position: relative; width:84%; ">
+		<legend>TEXT</legend>
+		<input id="text-note-head" placeholder="Heading"><br><br>
+		<textarea id="text-note" placeholder="Text"></textarea><br>
+		<!--select>
+				<option>ADD Priority option</option>
+				<option>asdfdfa</option>
+		</select-->
+		</fieldset>
 
-	<fieldset id="list-add" style="position: relative; width:84%; ">
-	<legend>LIST</legend>
-	<input id="text-note-head" placeholder="Heading"><br>
-
-	<div id="nodes" style="display: inline-block; width: 80%;">
-		<div id="node">
-			<h1 style="margin-right: 15px; margin: 3px; height: 22px; display: inline-block; border-radius: 0%" >*</h1>
-			<textarea id="text-list" placeholder="Text"></textarea>
-			<br>
-		</div>
-	</div>	
-	&nbsp;
-	<h1 title="New node" onclick="addnode()" style="display: inline-block; font-size: 250%; margin: 0px">+</h1>
-	<!--select>
-			<option>ADD Priority option</option>
-			<option>asdfdfa</option>
-	</select-->
-	</fieldset>
+		<fieldset id="list-add" style="position: relative; width:84%; ">
+			<legend>LIST</legend>
+			<input id="text-note-head" placeholder="Heading"><br>
+			<div id="nodes" style="display: inline-block; width: 80%;">
+				<div id="node">
+					<h1 style="margin-right: 15px; margin: 3px; height: 22px; display: inline-block; border-radius: 0%" >*</h1>
+					<textarea id="text-list" placeholder="Text"></textarea>
+					<br>
+				</div>
+			</div>	
+			&nbsp;
+			<h1 title="New node" onclick="addnode()" style="display: inline-block; font-size: 250%; margin: 0px">+</h1>
+			<!--select>
+					<option>ADD Priority option</option>
+					<option>asdfdfa</option>
+			</select-->
+		</fieldset>
 
 		<button id="addda_shit" onclick="get_in_feed()">Add NOTE</button>
+	
 	</center>
 	</div>
-	
-</center>
 
+	<div id ="foot">
+		<hr style="position: fixed; bottom:5%; width: 80%; right:10%">
+		<h4 id="new-button" >A new Note</h4>
+		<h3 id="end-note">Made with <img style="width:13px" src="images.png"> love by <a href="#">dewana_dewan</a></h3>
+	</div>
 
-	<hr style="position: fixed; bottom:5%; width: 80%; right:10%">
-			<h4 id="new-button" >A new Note</h4><h3 id="end-note">Made with <img style="width:13px" src="images.png"> love by <a href="#">dewana_dewan</a></h3>
-	<div id="hider"></div>
+	<div id="hider">
+		
+	</div>
 	
 
 
