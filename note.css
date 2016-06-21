@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Cormorant SC';
+  src: url('Cormorant_SC/CormorantSC-Light.ttf') format('truetype');
+}
+
+body{
+	font-family: 'Cormorant SC', serif;
+	background-color: rgb(255, 195, 0);
+	background-image:url(grain.png);
+
+}
+.footer-wrapper{
+	height: 100px;
+	padding: 10px;
+	margin:3px;
+	width: 97%;
+	font-size: 28px;
+	background-color: rgb(194, 213, 63)
+	box-shadow: 0px 0px 5px 2px #E3AE57;
+	position: fixed;
+	bottom: 10px;
+	/*align-content: center;*/
+}
+
+#menu-btn{
+	top:55px;
+	position: absolute;
+	width: 20px;
+	/*height:60px;*/
+}
+
+#menu-btn div{
+	display: inline-block;
+}
+
+#menu-btn i{
+	position: absolute;
+	display: block;
+	height: 4px;
+	background: white;
+	width: 30px;
+	left: 10px;
+}
+
+#menu-btn i:nth-child(1) {
+	top: 16px;
+}
+
+#menu-btn i:nth-child(2) {
+	top: 24px;
+}
+
+#menu-btn i:nth-child(3) {
+	top: 32px;
+}
+
+.footer-wrapper h1{
+	position: absolute;
+	top: 40px;
+	left: 70px;
+	color: white;
+	font-family: 'Bungee Shade', cursive;
+	margin: 0px;
+	padding: 5px;
+}
+
+#search{
+	position: absolute;
+	height: 40px;
+	top:60px;
+	right: 20px;
+}
+#search input{
+	position: absolute;
+	background-color: rgba(0,0,0,0);
+	border-width: 0px;
+	border-bottom: 1px solid white;
+	height: 30px;
+	width: 35vw;
+	right: 50px;
+}
+
+#search img{
+	position: absolute;
+	height: 30px;
+	right: 10px
+}
