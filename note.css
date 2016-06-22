@@ -136,8 +136,8 @@ p{
 .content-wrapper{
 	position: absolute;
 	border:3px double white;
-	border-radius: 5px;
-	background-color: rgba(200,0,0,.1);
+	border-radius: 10px;
+	background-color: rgba(200,200,200,.2);
 	overflow: auto;
 	bottom: 130px;
 	right: 50px;
