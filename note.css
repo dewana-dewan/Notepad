@@ -4,19 +4,34 @@
 }
 
 body{
-	font-family: 'Cormorant SC', serif;
+	font-family: 'Poiret One', serif;
+	font-size: 20px;
+	color: white;
 	background-color: rgb(255, 195, 0);
 	background-image:url(grain.png);
-
 }
+
+p{
+	font-weight: 500;
+}
+
+/*@keyframes show_delete_butt{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}*/
 
 .grid-item { 
 	width: 22%;
-	min-height: 100px;
+	min-height: 150px;
 	border: 2px solid grey;
+	text-align: center;
 	margin: 1%;
 	background: #C09;
-	border: 4px solid #333;
+	border: 4px solid #000;
  	border-color: hsla(0, 0%, 0%, 0.3);
  	transition: box-shadow .4s;
 }
@@ -26,12 +41,18 @@ body{
  	transition: box-shadow .4s;
 
 }
+.grid-item:hover .note-delete{
+	opacity: 1;
+	/*animation-name: show_delete_butt;
+	animation-duration: .5s;
+	animation-iteration-count: 1;*/ 
+}
 .grid-item-w2 { 
 	width: 47%;
 	background: #9C0; 
 }
 .grid-item-h2 {
-	height:200px;
+	height:300px;
 	background: #0C9;
 }
 
@@ -117,21 +138,24 @@ body{
 	border:3px double white;
 	border-radius: 5px;
 	background-color: rgba(200,0,0,.1);
-	bottom: 150px;
+	overflow: auto;
+	bottom: 130px;
 	right: 50px;
 	left: 50px;
-	top: 50px;
+	top: 30px;
 }
 
 .note-delete{
+	display: block;
+	opacity: 0;
 	position: absolute;
 	width: 30px;
 	top: -10px;
 	right: -10px;
-	transition: transform .4s;
+	transition: transform .4s, opacity .4s;
 }
 .note-delete:hover{
 	transform: rotate(90deg);
 	cursor: pointer;
-	transition: transform .4s;
+	transition: transform .4s, opacity .4s;
 }
