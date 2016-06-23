@@ -7,7 +7,7 @@ body{
 	font-family: 'Poiret One', serif;
 	font-size: 20px;
 	color: white;
-	background-color: rgb(255, 195, 0);
+	background-color: rgba(255, 195, 0,1);
 	background-image:url(grain.png);
 }
 
@@ -24,6 +24,9 @@ p{
 	}
 }*/
 
+.grid{
+	transition: transform .4s;
+}
 .grid-item { 
 	width: 22%;
 	min-height: 150px;
@@ -76,6 +79,14 @@ p{
 	/*height:60px;*/
 }
 
+#menu-btn:hover{
+	cursor: pointer;
+}
+
+#menu-btn:hover i{
+	background: red;
+}
+
 #menu-btn div{
 	display: inline-block;
 }
@@ -87,6 +98,7 @@ p{
 	background: white;
 	width: 30px;
 	left: 10px;
+	transition: background .3s;
 }
 
 #menu-btn i:nth-child(1) {

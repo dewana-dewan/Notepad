@@ -1,3 +1,5 @@
+//***Starting Packery***
+
 var elem = document.querySelector('.grid');
 var pckry = new Packery( elem, {
   // options
@@ -10,3 +12,12 @@ var pckry = new Packery( elem, {
 var pckry = new Packery( '.grid', {
   // options
 });
+
+//***menu-btn animation***
+
+var menubtn = document.getElementById('menu-btn');
+menubtn.addEventListener("click", changetooption);
+
+function changetooption(){
+	document.getElementsByClassName('grid')[0].style.transform = 'rotateY(90deg)';
+}
