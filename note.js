@@ -19,5 +19,12 @@ var menubtn = document.getElementById('menu-btn');
 menubtn.addEventListener("click", changetooption);
 
 function changetooption(){
-	document.getElementsByClassName('grid')[0].style.transform = 'rotateY(90deg)';
+	//animation 1;
+	//document.getElementsByClassName('grid')[0].style.transform = 'rotateY(90deg)';
+	//document.getElementById('form').style.transform = 'rotateY(0deg)';
+	
+	//animation 2;
+	//abhi ke liye this is good. :)
+	document.getElementsByClassName('grid')[0].style.left = '1500px';
+	document.getElementById('form').style.left = '20px';
 }
