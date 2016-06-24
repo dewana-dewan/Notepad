@@ -27,4 +27,16 @@ function changetooption(){
 	//abhi ke liye this is good. :)
 	document.getElementsByClassName('grid')[0].style.left = '1500px';
 	document.getElementById('form').style.left = '20px';
+	menubtn.removeEventListener("click", changetooption);
+	menubtn.addEventListener('click', changetonotes);
+	menubtn.title = "Back to notes";
+}
+
+function changetonotes(){
+	document.getElementsByClassName('grid')[0].style.left = '10px';
+	document.getElementById('form').style.left = '-1500px';
+	menubtn.addEventListener("click", changetooption);
+	menubtn.removeEventListener("click", changetonotes);
+	menubtn.title = "A new Note";
+
 }
