@@ -7,6 +7,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">  -->
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+	<script src="angular.js" ></script>
 	<script src="packery/packery.pkgd.js"></script>
 	<!-- <link href="https://fonts.googleapis.com/css?family=Cormorant+SC:300, 400" rel="stylesheet"> -->
 	<!-- <script type="text/javascript" src="packery/packery.pkgd.js"></script>  -->
@@ -31,10 +32,23 @@
 				<p class ="note-text">...</p>
 			</div>
 		</div>
-		<div id="form">
-			<h3>adsfasff</h3><hr>
-			<h1>asdagaaggh</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet imperdiet nisl. Vestibulum tincidunt pulvinar dolor, nec tincidunt tortor pharetra non.</p>
+		<div id="form" ng-app="">
+			<div id="form-fill">
+				<center>
+
+					<h3>
+						<label>Heading</label>
+						<input type="text" ng-model="heading" name="head">
+					</h3>
+				</center>
+			</div>
+			<div id="form-show">
+				<div class="sample-note1">
+					<center>
+						<h3>{{heading}}</h3>
+					</center>
+				</div>
+			</div>			
 		</div>
 	</div>
 
