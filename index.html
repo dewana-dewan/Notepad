@@ -32,7 +32,7 @@
 				<p class ="note-text">...</p>
 			</div>
 		</div>
-		<div id="form" ng-app="">
+		<div id="form" ng-app="app">
 			<div id="form-fill">
 				<center>
 
@@ -40,15 +40,30 @@
 						<label>Heading</label>
 						<input type="text" ng-model="heading" name="head">
 					</h3>
+					<span>
+						<input type="radio" name="opt" ng-model="checkboxModel" value="text">
+						<label for="opt1">Text1</label>
+
+						<input type="radio" name="opt" ng-model="checkboxModel" value="image">
+						<label for="opt2">Text2</label>
+						<div ng-show="checkboxModel == 'text' ">
+							<p>yooo yoo <br> this is box one</p>
+						</div>
+						<div ng-show="checkboxModel == 'image' ">
+							<p>
+								wooo woo <br> this is box two.
+							</p>
+						</div>
+					</span>
 				</center>
 			</div>
-			<div id="form-show">
+			<div id="form-show" title="Sample Note">
 				<div class="sample-note1">
-					<center>
-						<h3>{{heading}}</h3>
-					</center>
+				<center>
+					<h2><b>{{heading}}</b></h2>
+				</center>
 				</div>
-			</div>			
+			</div>
 		</div>
 	</div>
 
@@ -69,6 +84,7 @@
 
 
 </body>
-<script type="text/javascript" src="note.js"></script> 
+<script type="text/javascript" src="note-ang.js"></script>
+<script type="text/javascript" src="note.js"></script>
 
 </html>
