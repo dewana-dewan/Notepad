@@ -7,6 +7,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">  -->
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+	<script src="angular.js" ></script>
 	<script src="packery/packery.pkgd.js"></script>
 	<!-- <link href="https://fonts.googleapis.com/css?family=Cormorant+SC:300, 400" rel="stylesheet"> -->
 	<!-- <script type="text/javascript" src="packery/packery.pkgd.js"></script>  -->
@@ -31,13 +32,46 @@
 				<p class ="note-text">...</p>
 			</div>
 		</div>
+		<div id="form" ng-app="app">
+			<div id="form-fill">
+				<center>
+
+					<h3>
+						<label>Heading</label>
+						<input type="text" ng-model="heading" name="head">
+					</h3>
+					<span>
+						<input type="radio" name="opt" ng-model="checkboxModel" value="text">
+						<label for="opt1">Text1</label>
+
+						<input type="radio" name="opt" ng-model="checkboxModel" value="image">
+						<label for="opt2">Text2</label>
+						<div ng-show="checkboxModel == 'text' ">
+							<p>yooo yoo <br> this is box one</p>
+						</div>
+						<div ng-show="checkboxModel == 'image' ">
+							<p>
+								wooo woo <br> this is box two.
+							</p>
+						</div>
+					</span>
+				</center>
+			</div>
+			<div id="form-show" title="Sample Note">
+				<div class="sample-note1">
+				<center>
+					<h2><b>{{heading}}</b></h2>
+				</center>
+				</div>
+			</div>
+		</div>
 	</div>
 
 
 	<div class="footer-wrapper">
 		<hr width="90%">
 		<h1>Notepad</h1>
-		<div id="menu-btn">
+		<div id="menu-btn" title="Add new Note">
 			<i></i>
 			<i></i>
 			<i></i>
@@ -50,6 +84,7 @@
 
 
 </body>
-<script type="text/javascript" src="note.js"></script> 
+<script type="text/javascript" src="note-ang.js"></script>
+<script type="text/javascript" src="note.js"></script>
 
 </html>
